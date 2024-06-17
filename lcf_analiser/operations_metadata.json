@@ -1,0 +1,23 @@
+{"figure_id": "Figure 4",
+ "operation": "lcf_analysis",
+ "task_list": [{"name": "lcf", 
+                "sequence":1, 
+                "variables": {"reference_standard": "Sn Foil",
+                              "lower_limit":-20,
+                              "upper_limit":30,
+                              "lcf_components":["Sn Foil","SnO2"],
+                              "lcf_groups":["H2", "Ar", "Air"]}
+               },
+               {"name": "lcf",  
+                "sequence":2, 
+                "variables":{"reference_standard": "Sn Foil",
+                             "lower_limit":-20,
+                             "upper_limit":30,
+                             "lcf_components":["Sn Foil","SnO2"],
+                             "lcf_groups":["H2 H", "Ar H", "Air H"]}
+               },
+               {"name": "save_processed", 
+                "sequence":3, 
+                "variables":{"out_prefix": "PtSn_KEdge", 
+                             "out_location": "../outputs"}}]
+}
