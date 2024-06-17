@@ -1,0 +1,36 @@
+{
+    "figure_id": "Figure 6",
+    "figure_legend": "Fig. 6 Mn K-edge EXAFS data after 4 h of milling in (A) atmospheric and (B) inert milling conditions showing the magnitude and imaginary components of the k2-weighted FT data and fits compared to (C) sol–gel synthesised LaMnO3.",
+    "publication": {
+        "cdi_pub": 723,
+        "doi": "10.1039/d0cp00793e"
+    },
+    "data_object": {
+        "cdi_do": 747,
+        "doi": "10.5258/SOTON/D1342"
+    },
+    "data_file": "Xray_data.zip",
+    "data_mapping": [
+        {
+            "data_path": "../wf_data/pub_723/DS0747",
+            "data_type": "athena",
+            "file_mappings": [
+                {
+                    "group":"Sol-Gel", 
+                    "group_name":"Mn_Sol_gel",
+                    "file_name": "Figure_6_7A_B_XAFS.prj"
+                },
+                {
+                    "group":"Air Milled",
+                    "group_name":"Mn_air_milled",
+                    "file_name": "Figure_6_7A_B_XAFS.prj"
+                },
+                {
+                    "group":"Argon Milled",
+                    "group_name":"Mn_argon_milled",
+                    "file_name": "Figure_6_7A_B_XAFS.prj"
+                }         
+            ]
+        }
+    ]
+}

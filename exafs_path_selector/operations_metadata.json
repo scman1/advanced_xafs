@@ -1,0 +1,58 @@
+{
+    "figure_id": "Figure 5",
+    "publication": {
+       "cdi_pub": 37,
+       "doi": "10.1039/c7fd00221a"
+    },
+    "data_object": {
+        "cdi_do": 537,
+        "doi": "10.5258/SOTON/D0408"
+    },
+    "data_file": "Xray_data.zip",
+ "task_list": [{"name": "generate_scattering_paths", 
+                "sequence":1, 
+                "variables": {"data_path": "../wf_data/pub_723/additional",
+                              "crystal_files": ["1667441.cif"],
+                              "fit_vars": {
+                                  "fitspace": "k",
+                                  "kmin": 0,
+                                  "kmax": 10,
+                                  "kw": 2,
+                                  "dk": 1,
+                                  "window": "hanning",
+                                  "rmin": 0.0,
+                                  "rmax": 5.0
+                              },
+                              "absorbing_atoms": ["Mn"],
+                              "max_radius": 5.0}
+               },
+               {"name": "generate_paths",  
+                "sequence":2, 
+                "variables":{}
+               },
+               {"name": "create_path_combinations",  
+                "sequence":3, 
+                "variables":{"max_paths":3,
+                             "min_cw_ratio":20.0,
+                             "max_deg":10,
+                             "max_reff":5.0
+                            }
+               },
+               {"name": "test_path_combinations",  
+                "sequence":4, 
+                "variables":{}
+               },
+               {"name": "show_best_combinations",  
+                "sequence":5, 
+                "variables":{}
+               },
+
+               {"name": "save_results",  
+                "sequence":6, 
+                "variables":{
+                             "out_prefix": "LaMnO3", 
+                             "out_location": "../outputs"
+                            }
+               }]
+
+}
