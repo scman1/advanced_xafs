@@ -213,7 +213,11 @@ def calc_with_defaults(xafs_group):
     # calculate pre-edge and post edge and add them to group
     # need to read parameters for pre-edge before background calculation with  
     # defaul values undo the work of previous step (setting pre-edge limits).
-    pre_edge(xafs_group, pre1=xafs_group.athena_params.bkg.pre1, pre2=xafs_group.athena_params.bkg.pre2)
+    if "athena_params" in xafs_group:
+        pre_edge(xafs_group, pre1=xafs_group.athena_params.bkg.pre1, pre2=xafs_group.athena_params.bkg.pre2)
+    else:
+        #use larch defaults
+        pre_edge(xafs_group)
     #pre_edge(xafs_group)
     # perform background removal
     autobk(xafs_group) # using defaults so no additional parameters are passed

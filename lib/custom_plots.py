@@ -4,14 +4,14 @@ from matplotlib import pyplot as plt
 import matplotlib.cm as cm
 
 # individaul LCF plots
-def make_subplot(a_subplt, group1, group2):
+def make_subplot(a_subplt, group1, group2,xlim=[29180, 29230]):
     a_subplt.plot(group1.energy, group1.norm, label=group1.filename, linewidth=4,color='blue')
     a_subplt.plot(group2.energy, group2.norm, label=group2.filename, linewidth=2, color='orange',linestyle='--')
     a_subplt.grid(color='black', linestyle=':', linewidth=1) #show and format grid
     a_subplt.set_title(group2.arrayname, fontsize=8)
     a_subplt.legend() # show legend
      
-    a_subplt.set_xlim([29180, 29230])
+    a_subplt.set_xlim(xlim)
     #a_subplt.set_ylim([0, 1.5])
     #a_subplt.tick_params(axis='both', which='major', labelsize=9)
     #xlabels = a_subplt.get_xticklabels()
@@ -19,12 +19,12 @@ def make_subplot(a_subplt, group1, group2):
     return a_subplt
 
 # compare LCF plots
-def compare_lcf_plot(result_list):
+def compare_lcf_plot(result_list, xlim=[29180, 29230]):
     components = len(result_list)
     fig = plt.figure(figsize=(8, 2))
     fig, axes = plt.subplots(1,components, constrained_layout=True)
     for i in range(0,components):
-        axes[i] = make_subplot(axes[i], result_list[i][0], result_list[i][1])
+        axes[i] = make_subplot(axes[i], result_list[i][0], result_list[i][1], xlim=xlim)
     return fig
 
 
