@@ -180,7 +180,7 @@ def lcf_group(a_group, fit_components=[], fit_limits=[-np.inf, np.inf],
     lcfr = math.lincombo_fit(a_group, fit_components, 
                              weights=[0.5,0.5], arrayname=fit_space,
                              xmin=fit_limits[0],xmax=fit_limits[1], 
-                             vary_e0 = same_e0)
+                             vary_e0 = same_e0,sum_to_one=True)
     names_lbl = ""
 
     lcfr.energy = lcfr.xdata
